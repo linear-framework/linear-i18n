@@ -1,7 +1,11 @@
 plugins {
   `java-library`
   scala
+  `maven-publish`
 }
+
+group = "com.linearframework"
+version = "0.1.1-SNAPSHOT"
 
 repositories {
   jcenter()
@@ -19,4 +23,23 @@ dependencies {
 tasks.named<Jar>("jar") {
   from(sourceSets["main"].output)
   from(sourceSets["main"].allSource)
+}
+
+publishing {
+  repositories {
+    maven {
+      name = "LinearI18n"
+      url = uri("https://maven.pkg.github.com/linear-framework/linear-i18n")
+      credentials {
+        username = System.getenv("GITHUB_USER")
+        password = System.getenv("GITHUB_TOKEN")
+      }
+    }
+  }
+  publications {
+    create<MavenPublication>("PublishToGithub") {
+      artifactId = "i18n"
+      from(components["java"])
+    }
+  }
 }
