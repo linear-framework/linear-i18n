@@ -5,7 +5,6 @@ plugins {
 }
 
 group = "com.linearframework"
-version = "0.1.1-SNAPSHOT"
 
 java {
   sourceCompatibility = JavaVersion.VERSION_1_8
