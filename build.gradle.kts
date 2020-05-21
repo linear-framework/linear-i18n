@@ -17,11 +17,11 @@ repositories {
 }
 
 dependencies {
-  implementation("org.scala-lang:scala-library:2.13.1")
+  implementation("org.scala-lang:scala-library:2.13.2")
 
   testImplementation("junit:junit:4.13")
-  testImplementation("org.scalatest:scalatest_2.13:3.1.1")
-  testImplementation("org.scalatestplus:junit-4-12_2.13:3.1.1.0")
+  testImplementation("org.scalatest:scalatest_2.13:3.1.2")
+  testImplementation("org.scalatestplus:junit-4-12_2.13:3.1.2.0")
 }
 
 tasks.named<Jar>("jar") {

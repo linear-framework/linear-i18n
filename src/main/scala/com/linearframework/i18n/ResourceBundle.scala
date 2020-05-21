@@ -99,7 +99,7 @@ trait ResourceBundle {
       forLocale("")
     }
     else {
-      forLocale(locale.toString.replaceAllLiterally("_", "-"))
+      forLocale(locale.toString.replace("_", "-"))
     }
   }
 
